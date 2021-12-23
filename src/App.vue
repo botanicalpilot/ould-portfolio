@@ -1,15 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="app">
+        <router-view/>
+    </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  mounted(){
+    var contentful = require('contentful'),
+	contentfulConfig = require('../contentful.json'),
+			contentfulKey = require('../config.json'),
+			client = contentful.createClient({
+				space: contentfulConfig.CTF_SPACE_ID,
+				accessToken: contentfulKey.ApiKey,
+				host: contentfulKey.Preview ? 'preview.contentful.com' : 'cdn.contentful.com'
+			});
+		client.getEntries({
+			// eslint-disable-next-line camelcase
+			content_type:'works',
+			include:1
+		})
+			.then((res) => {
+				let works = [];
+				res.items.forEach((res) => {
+						works.push(res.fields);
+				});
+				console.log(works[0])
+				// Set State
+				this.$store.commit('setWorks', works[0]);
+			});
   }
 }
 </script>
@@ -21,6 +39,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

@@ -1,8 +1,11 @@
 .DS_Store
 node_modules
 /dist
-
-
+config.production.json
+config.dev.json
+config.json
+contentful.json
+ouldPortfolio.code-workspace
 # local env files
 .env.local
 .env.*.local
