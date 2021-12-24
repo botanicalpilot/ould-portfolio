@@ -1,6 +1,6 @@
 <template>
 	<div class="worksContainer">
-		<work class="works" 
+		<work 
 			v-for="(project, index) in this.works"
 			:key="index"
 			:project="project"
@@ -14,7 +14,7 @@ export default {
 	components:{
 		Work
 	},
-	mounted(){
+	beforeMount(){
 		this.works = this.returnWorks;
 		console.log(this.works)
 	},
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 <style>
-	.works{
+	.worksContainer{
 		width: 100vw;
 		white-space: nowrap;
 	}
