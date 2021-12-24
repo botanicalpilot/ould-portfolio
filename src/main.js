@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { createStore } from 'vuex'
+require('@/assets/main.css');
 
 // Create a new store instance.
 const store = createStore({
