@@ -1,7 +1,7 @@
 <template>
 	<div class="workContainer">
 		<div class="work"> 
-			{{project.fields.title}}
+			{{title}}
 		</div>
 	</div>
 </template>
@@ -15,7 +15,9 @@ export default {
 		}
 	},
 	computed:{
-		
+		title(){
+			return this.project.fields.title
+		},
 	}
 }
 </script>

@@ -1,10 +1,8 @@
 <template>
 	<div class="worksContainer">
-		<work 
-			v-for="(project, index) in this.works"
-			:key="index"
-			:project="project"
-			/>
+		<div v-for="(project, index) in returnWorks" :key="index">
+			<work :project="project" />
+		</div>
 	</div>
 </template>
 <script>
@@ -14,13 +12,9 @@ export default {
 	components:{
 		Work
 	},
-	beforeMount(){
-		this.works = this.returnWorks;
-		console.log(this.works)
-	},
 	data: function () {
 		return {
-			works: 0
+			
 		}
 	},
 	computed:{
