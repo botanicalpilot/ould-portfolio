@@ -33,6 +33,10 @@ export default {
 </script>
 
 <style>
+body{
+	padding: 0px;
+	margin: 0px;
+}
 #app {
   font-family: 'Catamaran', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
