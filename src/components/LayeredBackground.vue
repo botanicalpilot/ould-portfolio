@@ -2892,8 +2892,6 @@
 </svg>
 
 
-
-
 <!-- modified trees 2 -->
 <svg
    height="332.98297pt"
@@ -3019,8 +3017,6 @@
   </g>
 </svg>
 
-
-
 <!-- modified trees 1 -->
 <svg
    height="149.96637pt"
@@ -3119,6 +3115,10 @@
 	</div>
 </template>
 <script>
+
+import { gsap } from "gsap"; 
+import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+
 export default {
 	name: 'LayeredBackground',
 	props:[],
@@ -3126,6 +3126,9 @@ export default {
 		return {
 			
 		}
+	},
+	mounted(){
+		gsap.registerPlugin(ScrollTrigger);
 	},
 	computed:{}
 		
