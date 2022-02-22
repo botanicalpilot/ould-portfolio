@@ -3,6 +3,7 @@
 
 <!-- mountain SVG -->
 <svg
+   class="svgLayer1"
    height="400pt"
    viewBox="230 0 155 155"
    width="100%"
@@ -2894,6 +2895,7 @@
 
 <!-- modified trees 2 -->
 <svg
+   class="svgLayer2"
    height="332.98297pt"
    viewBox="0 0 5957.4414 665.96594"
    width="2978.7207pt"
@@ -3019,6 +3021,7 @@
 
 <!-- modified trees 1 -->
 <svg
+   class="svgLayer3"
    height="149.96637pt"
    viewBox="0 0 1691.5372 149.96638"
    width="1691.5372pt"
@@ -3129,11 +3132,24 @@ export default {
 	},
 	mounted(){
 		gsap.registerPlugin(ScrollTrigger);
-	},
-	computed:{}
+      gsap.timeline({
+  scrollTrigger: {
+    trigger: ".layeredBackgroundContainer",
+    start: "center bottom",
+    end: "top top",
+    scrub: true,
+    pin: true
+  }
+})
+      .to(".svgLayer2", {yPercent:-10}, 0)
+      .to(".svgLayer3", {yPercent:-190}, 0)
+         },
+         computed:{}
 		
 }
 </script>
 <style>
-
+   .svgLayer2{
+      margin-top:-10vh;
+   }
 </style>
