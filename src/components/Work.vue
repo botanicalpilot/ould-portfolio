@@ -22,5 +22,7 @@ export default {
 }
 </script>
 <style>
-
+.work{
+	color: white;
+}
 </style>

@@ -28,5 +28,6 @@ export default {
 	.worksContainer{
 		width: 100vw;
 		white-space: nowrap;
+		background-color: black;
 	}
 </style>
