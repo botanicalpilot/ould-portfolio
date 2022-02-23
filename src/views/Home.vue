@@ -37,8 +37,8 @@ export default {
 </script>
 <style scoped>
 .home{
-  background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(2,11,38,1) 25%, rgba(2,11,38,1) 59%, rgba(152,121,217,1) 87%);
+   background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 12%, rgba(18,9,30,1) 25%, rgba(18,9,30,1) 59%, rgba(208,156,95,1) 87%); 
 }
 
 </style>
